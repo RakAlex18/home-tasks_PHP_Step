@@ -8,7 +8,7 @@
     <title>Домашняя работа от 29 сентября</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
-<body style = "width: 1200px">
+<body style = "width: 1200px; margin: 0 auto">
 <p>
     1. При помощи цикла for выведите все нечетные числа от 1 до 50
 </p>
@@ -31,7 +31,6 @@ for ($i = 1; $i <=50; $i = $i+2){
         <?php
         $i++;
     endwhile;
-
     ?>
 </ul>
 <p>
@@ -120,65 +119,39 @@ foreach ($arr as $elem) {?>
 </p>
 <?php
 $form = [
-    div => [
+    0 => [
+        'tag' => 'div',
         'class' => 'form-group',
-        'tag' => 'label',
+        'tag2' => 'label',
         'for' => 'exampleInputEmail1',
         'description' => 'Email address',
-        'tag2' => 'input',
+        'tag3' => 'input',
         'type' => 'email',
         'class2' => 'form-control',
         'id' => 'exampleInputEmail1',
-        'placeholder' => 'Enter email',
+        'placeholder' => 'Enter_Email',
     ],
-    div => [
+    1 => [
+        'tag' => 'div',
         'class' => 'form-group',
-        'tag' => 'label',
+        'tag2' => 'label',
         'for' => 'exampleInputPassword1',
         'description' => 'Password',
-        'tag2' => 'input',
+        'tag3' => 'input',
         'type' => 'password',
         'class2' => 'form-control',
         'id' => 'exampleInputPassword1',
         'placeholder' => 'Password',
-    ],
-    button => [
-        'class' => 'btn btn-primary',
-        'type' => 'submit',
-        'description' => 'Submit'
     ]
+
 ];
-foreach ($form as $key => $elem){?>
-<form>
-    <?php
-    echo '<'.$key.'>';
-    ?>
-    <div class="form-group">
-        <label for="exampleInputEmail1">Email address</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-    </div>
-    <div class="form-group">
-        <label for="exampleInputPassword1">Password</label>
-        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-    </div>
+foreach ($form as $key){
+    echo '<'.$key['tag'].' class = '.$key['class'].'>';
+    echo '<'.$key['tag2'].' for = '.$key['for'].'>'.$key['description'].'</'.$key['tag2'].'>';
+    echo '<'.$key['tag3'].' type = '.$key['type'].' class = '.$key['class2'].' id = '.$key['id'].' placeholder = '.$key['placeholder'].'>';
+    echo  '</'.$key['tag'].'>';
+}
+?>
 
-    <button type="submit" class="btn btn-primary">Submit</button>
-</form>
-
-
-<form>
-    <div class="form-group">
-        <label for="exampleInputEmail1">Email address</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-    </div>
-    <div class="form-group">
-        <label for="exampleInputPassword1">Password</label>
-        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-    </div>
-
-    <button type="submit" class="btn btn-primary">Submit</button>
-</form>
-
-
-    </body>
+</body>
 </html>
